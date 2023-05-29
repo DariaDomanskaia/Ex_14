@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="main">
+    <div class="container">
+        <div class="logo__container">
+        <a href="#">
+            <img src="images/homeWorks.png" alt="logotype">
+        </a>
+        </div>
+        <div class="content">
+        <div class="main__description">
+            <h1 id="heading" class="description__header">
+                Get your free account
+            </h1>
+            <div class="description__desc" id="desc">
+                Try homeWorks BUSINESS free for 15 days. Downgrade to Basic (Free Forever) anytime.
+            </div>
+            <form action="#" method="post" class="form">
+                <div class="fullName-input">
+                    <div class="label">
+                        Full Name
+                    </div>
+                    <input type="text" class="text" id="fullName">
+                    <div class="error_msg">This field needs to include only letters and space</div>
+                </div>
+                <div class="userName-input">
+                    <div class="label">
+                        Your username
+                    </div>
+                    <input type="text" class="text" id="userName">
+                    <div class="error_msg">This field needs to include only letters, numbers and characters - (-), (_)</div>
+                    <div class="error_msg2">This user is not registered.</div>
+                </div>
+                <div class="email-input">
+                    <div class="label">
+                        E-mail
+                    </div>
+                    <input type="text" class="text" id="email">
+                    <div class="error_msg">You need to have a valid email</div>
+                </div>
+                <div class="password-input">
+                    <div class="label">
+                        Password
+                    </div>
+                    <input type="password" class="text" id="password">
+                    <div class="error_msg">Your password needs to be a minimum of 8 characters - including 1 special character, 1 uppercase character, 1 lowercase character</div>
+                    <div class="error_msg2">Incorrect password</div>
+                </div>
+                <div class="repeatPassword-input">
+                    <div class="label">
+                        Repeat Password
+                    </div>
+                    <input type="text" class="text" id="repeatPassword">
+                    <div class="error_msg">This field must match field Password</div>
+                </div>
+
+                <div class="checkbox">
+                    <input type="checkbox" id="check" checked> Agree to our Terms of Service and Privacy Statement
+                    <div class="error_msg">Confirm your consent</div>
+                </div>
+
+                <div class="button"><button class="btn" id="signUp">Sign Up</button></div>
+            </form>
+
+            <div class="link"><a id="link" class="already" href="#">Already have an account?</a></div>
+        </div>
+
+        <div class="main__img">
+            <img src="images/main.png" alt="picture">
+        </div>
+        </div>
+    </div>
+</main>
+
+<div class="popup" id="popUp">
+    <div class="cont">
+        <div class="popup__text">
+            На вашу почту выслана ссылка, перейдите по ней, чтобы завершить регистрацию.
+        </div>
+        <button id="popupbtn" class="btn agree">OK</button>
+    </div>
+</div>
+
+<script src="scripts/jquery-3.6.4.min.js"></script>
+<script src="scripts/script.js"></script>
+</body>
+</html>
