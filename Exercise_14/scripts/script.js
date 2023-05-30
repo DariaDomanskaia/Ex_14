@@ -11,6 +11,7 @@ window.onload = function () {
     let btnpopup = document.getElementById('popupbtn');
     let link = document.getElementById('link');
     let heading = document.getElementById('heading');
+    let popUp = document.getElementById('popUp');
     let desc = document.getElementById('desc');
     const regexe = /^((([0-9A-Za-z]{1}[-0-9A-z\.]{1,}[0-9A-Za-z]{1})|([0-9А-Яа-я]{1}[-0-9А-я\.]{1,}[0-9А-Яа-я]{1}))@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/g;
     const regexForPass = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/g;
@@ -94,11 +95,19 @@ window.onload = function () {
     }
 
     function openModal() {
-        document.getElementById('popUp').style.transform = 'translateX(0)';
+        popUp.style.opacity = '1';
+        popUp.style.width = '100vw';
+        popUp.style.height = '100vh';
+        popUp.style.transform = 'translateX(0%)';
+        popUp.style.transition = '1.2s ease-in-out';
     }
 
     function closeModal() {
-        document.getElementById('popUp').style.transform = 'translateX(100%)';
+        popUp.style.transform = 'translateX(100%)';
+        popUp.style.transition = '1.2s ease-in-out';
+        popUp.style.opacity = '0';
+        popUp.style.width = '0';
+        popUp.style.height = '0';
     }
 
     function changePage() {
