@@ -100,6 +100,8 @@ window.onload = function () {
         popUp.style.height = '100vh';
         popUp.style.transform = 'translateX(0%)';
         popUp.style.transition = '1.2s ease-in-out';
+        const body = document.querySelector('body');
+        body.style.overflow = 'hidden';
     }
 
     function closeModal() {
@@ -108,6 +110,8 @@ window.onload = function () {
         popUp.style.opacity = '0';
         popUp.style.width = '0';
         popUp.style.height = '0';
+        const body = document.querySelector('body');
+        body.style.overflow = 'auto';
     }
 
     function changePage() {
@@ -121,9 +125,20 @@ window.onload = function () {
         link.classList.add('second_list');
         link.addEventListener('click', () => {
             location.reload();
-            return false;
         });
     }
+
+    function handleInputChange(event){
+        const input = event.target;
+        input.value !== '' ?
+            input.style.borderColor = 'greenyellow' :
+            input.style.borderColor = '#C6C6C4';
+    }
+
+    const formInputs = document.querySelectorAll('form input');
+    formInputs.forEach(input => {
+        input.addEventListener('input', handleInputChange);
+    })
 
     function checked(ev) {
         ev.preventDefault();
@@ -192,6 +207,9 @@ window.onload = function () {
             localStorage.setItem('clients', JSON.stringify(clients));
             form.reset();
             openModal();
+            formInputs.forEach(input =>{
+                input.style.borderColor = '';
+            });
         }
 
     }
@@ -232,7 +250,6 @@ window.onload = function () {
                     signUp.removeEventListener('click', submit);
                     signUp.addEventListener('click', () => {
                         location.reload();
-                        return false;
                     });
                     link.remove();
                     desc.remove();
